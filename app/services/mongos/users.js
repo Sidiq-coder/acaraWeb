@@ -18,8 +18,8 @@ const createOrganizer = async (req) => {
        email,
        name,
        password,
-       organizer: result._id, 
        role,
+       organizer: result._id, 
     });
 
     delete users._doc.password;
@@ -39,11 +39,17 @@ const createUsers = async (req) => {
        email,
        name,
        password,
-       organizer : req.user.organizer, 
        role,
+       organizer : req.user.organizer, 
     });
 
     return result;
 }
 
-module.exports = {createOrganizer, createUsers};
+const getAllUsers = async (req) => {
+    const result = await Users.find();
+
+    return result;
+};
+
+module.exports = {createOrganizer, createUsers, getAllUsers};

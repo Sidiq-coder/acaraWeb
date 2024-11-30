@@ -11,7 +11,7 @@ const createCategories = async (req) => {
     const {name} = req.body;
 
     // cek categories name
-    const check = await categories.findOne({ name });
+    const check = await categories.findOne({ name, organizer: req.user.organizer });
 
     // jika kategori sudah ada
     if (check) throw new BadRequest('kategori nama duplikat');
