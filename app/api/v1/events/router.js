@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express();
-const { create, index, find, update, destroy } = require('./controller');
+const { create, index, find, update, destroy, changeStatus } = require('./controller');
 
 const {
     authenticatedUser, 
@@ -12,5 +12,6 @@ router.get('/events/:id', authenticatedUser, authorizedRoles('organizer'), find)
 router.put('/events/:id', authenticatedUser, authorizedRoles('organizer'), update);
 router.delete('/events/:id', authenticatedUser, authorizedRoles('organizer'), destroy);
 router.post('/events', authenticatedUser, authorizedRoles('organizer'), create);
+router.put('/events/:id/status', authenticatedUser, authorizedRoles('organizer'), changeStatus);
 
 module.exports = router;

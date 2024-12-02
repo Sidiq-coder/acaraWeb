@@ -23,6 +23,12 @@ const organizerRouter = require('./app/api/v1/organizers/router');
 // auth
 const authRouter = require('./app/api/v1/auth/router');
 
+//order
+const orderrrouter = require('./app/api/v1/order/router');
+
+// payments
+const paymentsRouter = require('./app/api/v1/payments/router');
+
 
 // middleware
 const notFoundMiddleware = require('./app/middleware/not-found');
@@ -52,6 +58,8 @@ app.use(v1, imagesRouter);
 app.use(v1, eventsRouter);
 app.use(v1, organizerRouter);
 app.use(v1, authRouter);
+app.use(v1, orderrrouter);
+// app.use(v1, paymentsRouter);
 
 
 
