@@ -26,6 +26,9 @@ const authRouter = require('./app/api/v1/auth/router');
 //order
 const orderrrouter = require('./app/api/v1/order/router');
 
+//participants
+const participantsrrouter = require('./app/api/v1/participants/router');
+
 // payments
 const paymentsRouter = require('./app/api/v1/payments/router');
 
@@ -59,6 +62,8 @@ app.use(v1, eventsRouter);
 app.use(v1, organizerRouter);
 app.use(v1, authRouter);
 app.use(v1, orderrrouter);
+app.use(no_cms, participantsrrouter);
+
 // app.use(v1, paymentsRouter);
 
 

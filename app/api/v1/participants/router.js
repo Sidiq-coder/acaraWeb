@@ -11,7 +11,7 @@ const {
   getAllPayment,
 } = require('./controller');
 
-const { authenticateParticipant } = require('../../../middlewares/auth');
+const { authenticateParticipant } = require('../../../middleware/auth');
 
 router.post('/auth/signup', signup);
 router.post('/auth/signin', signin);
